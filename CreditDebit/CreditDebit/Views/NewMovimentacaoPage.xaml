@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CreditDebit.Views.NewMovimentacaoPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="Movimentacao">
+    <ContentPage.Content>
+            
+        <StackLayout Spacing="3" Padding="15">
+            
+            <Label Text="Descricao" FontSize="Medium" />
+            <Editor Text="{Binding Descricao, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+
+            <Label Text="Data" />
+            <DatePicker MinimumDate="{Binding MinDate}" Date="{Binding Data}" />
+
+            <Picker x:Name="Tipo"  HorizontalOptions="FillAndExpand" Title="Tipo:" SelectedItem="{Binding Tipo, Mode=TwoWay}">
+                <Picker.Items>
+                    <x:String>Debito</x:String>
+                    <x:String>Credito</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Valor" FontSize="Medium" />
+            <Editor Text="{Binding Valor, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" Keyboard="Numeric"/>
+						
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

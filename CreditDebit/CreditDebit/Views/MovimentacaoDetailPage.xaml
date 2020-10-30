@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CreditDebit.Views.MovimentacaoDetailPage"
+             Title="{Binding Title}">
+
+    <StackLayout Spacing="20" Padding="15">
+
+        <Label Text="Descricao:" FontSize="Medium" />
+        <Label Text="{Binding Descricao}" FontSize="Small"/>	
+        <Label Text="Tipo:" FontSize="Medium" />
+        <Label Text="{Binding Tipo}" FontSize="Small"/>
+		<Label Text="Data:" FontSize="Medium" />
+        <Label Text="{Binding Data}" FontSize="Small"/>
+        <Label Text="Valor:" FontSize="Medium" />
+        <Label Text="{Binding Valor}" FontSize="Small"/>
+
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Delete" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+        </StackLayout>
+
+    </StackLayout>
+    
+</ContentPage>
